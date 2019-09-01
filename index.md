@@ -1,9 +1,12 @@
 ## Fraser Simpson
 ### Lecturer | Game Designer
 
-[Professional Site](http://www.frasersimpson.co.uk)
-[Photography](http://www.frsrphoto.com)
-[Twitter](http://twitter.com/users/_frsr)
+- [Professional Site](http://www.frasersimpson.co.uk)
+- [Photography](http://www.frsrphoto.com)
+- [Twitter](http://twitter.com/users/_frsr)
+- [Instagram]
+- [Blog]
+- [Abertay University Staff Profile]
 
 
 This is Fraser Simpson's Github Page.
