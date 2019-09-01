@@ -1,8 +1,11 @@
-## Welcome to GitHub Pages
+## Fraser Simpson
+### Lecturer | Game Designer
 
-You can use the [editor on GitHub](https://github.com/frsrgames/frsrgames.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+// You can use the [editor on GitHub](https://github.com/frsrgames/frsrgames.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+This is Fraser Simpson's Github Page.
+
+[comment]: <> (henever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/)
 
 ### Markdown
 
