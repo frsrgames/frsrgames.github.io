@@ -1,7 +1,10 @@
 ## Fraser Simpson
 ### Lecturer | Game Designer
 
-// You can use the [editor on GitHub](https://github.com/frsrgames/frsrgames.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+[Professional Site](http://www.frasersimpson.co.uk)
+[Photography](http://www.frsrphoto.com)
+[Twitter](http://twitter.com/users/_frsr)
+
 
 This is Fraser Simpson's Github Page.
 
