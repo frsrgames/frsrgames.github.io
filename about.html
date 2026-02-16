@@ -1,38 +1,81 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>About — Fraser Simpson</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:wght@500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About — Fraser Simpson</title>
+  <meta name="description" content="About Fraser Simpson." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:wght@500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-<header class="site-header">
-<div class="container">
-<a class="brand" href="index.html">Fraser Simpson</a>
-<nav class="nav">
-<a href="index.html">Home</a>
-<a class="active" href="about.html">About</a>
-<a href="teaching.html">Teaching</a>
-<a href="publications.html">Publications</a>
-<a href="resources.html">Resources</a>
-<a href="gameography.html">Gameography</a>
-<a href="contact.html">Contact</a>
-</nav>
-</div>
-</header>
-<main class="container">
-<h1>About</h1><p>About content here.</p>
-<footer class="footer">
-<div>© <span id="year"></span> Fraser Simpson</div>
-<div>frasersimpson.net</div>
-</footer>
-</main>
-<script>
-document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html">Fraser Simpson</a>
+
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a class="active" href="about.html">About</a>
+        <a href="teaching.html">Teaching</a>
+        <a href="publications.html">Publications</a>
+        <a href="resources.html">Resources</a>
+        <a href="gameography.html">Gameography</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <h1>About</h1>
+    <p class="lead">
+      Use this page for a short biography and a few key interests. Keep it concrete: what you do, who you work with,
+      and what you’re open to.
+    </p>
+
+    <hr class="rule" />
+
+    <h2>Short bio</h2>
+    <p>
+      <strong>Example:</strong> I’m a lecturer in games business and professional practice. My teaching focuses on helping
+      students understand how games are made, funded, and sold — and the ethical trade-offs that come with that reality.
+    </p>
+
+    <h2>Interests</h2>
+    <ul>
+      <li>Ethics, governance, and responsibility in games</li>
+      <li>Assessment and feedback design</li>
+      <li>Student engagement and practical learning</li>
+    </ul>
+
+    <div class="callout">
+      <strong>Template tip</strong>
+      <p class="small" style="margin-top: 8px;">
+        To add a new page, copy an existing HTML file, update <code>&lt;title&gt;</code>, <code>&lt;h1&gt;</code>,
+        and set the active navigation link.
+      </p>
+    </div>
+
+    <h2>Selected links</h2>
+    <ul class="linklist">
+      <li><a href="#">University profile</a></li>
+      <li><a href="#">CV (PDF)</a> — upload a PDF to the repo and link it here</li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+
+    <footer class="footer">
+      <div>© <span id="year"></span> Fraser Simpson</div>
+      <div>frasersimpson.net</div>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
