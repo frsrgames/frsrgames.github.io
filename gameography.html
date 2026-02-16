@@ -1,38 +1,70 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Gameography — Fraser Simpson</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:wght@500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Gameography — Fraser Simpson</title>
+  <meta name="description" content="Gameography — Fraser Simpson." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:wght@500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-<header class="site-header">
-<div class="container">
-<a class="brand" href="index.html">Fraser Simpson</a>
-<nav class="nav">
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="teaching.html">Teaching</a>
-<a href="publications.html">Publications</a>
-<a href="resources.html">Resources</a>
-<a class="active" href="gameography.html">Gameography</a>
-<a href="contact.html">Contact</a>
-</nav>
-</div>
-</header>
-<main class="container">
-<h1>Gameography</h1><p>Gameography here.</p>
-<footer class="footer">
-<div>© <span id="year"></span> Fraser Simpson</div>
-<div>frasersimpson.net</div>
-</footer>
-</main>
-<script>
-document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html">Fraser Simpson</a>
+
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="teaching.html">Teaching</a>
+        <a href="publications.html">Publications</a>
+        <a href="resources.html">Resources</a>
+        <a class="active" href="gameography.html">Gameography</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <h1>Gameography</h1>
+    <p class="lead">
+      List game-related projects and contributions. Keep each entry short: title, year, role, and a link.
+    </p>
+
+    <hr class="rule" />
+
+    <h2>Selected projects</h2>
+    <ul>
+      <li>
+        <strong>Project Title</strong> (2025) — Role / contribution. <a href="#">Link</a><br />
+        <span class="small">One sentence on what you did or what the project achieved.</span>
+      </li>
+      <li>
+        <strong>Another Project</strong> (2023) — Role / contribution. <a href="#">Link</a><br />
+        <span class="small">A short note: platform, team size, or outcome.</span>
+      </li>
+    </ul>
+
+    <h2>Tools / prototypes</h2>
+    <ul class="linklist">
+      <li><a href="#">FeedbackBuilder</a> — brief note on what it does.</li>
+      <li><a href="#">Prototype</a> — brief note.</li>
+    </ul>
+
+
+    <footer class="footer">
+      <div>© <span id="year"></span> Fraser Simpson</div>
+      <div>frasersimpson.net</div>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
