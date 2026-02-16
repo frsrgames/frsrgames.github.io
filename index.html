@@ -4,129 +4,68 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Fraser Simpson</title>
-  <meta name="description" content="Fraser Simpson — Lecturer and educator (games business, ethics, higher education)." />
-
-  <!-- Optional: load JetBrains Mono (safe to omit; system monospace will be used) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
-
+  <meta name="description" content="Fraser Simpson — lecturer and educator." />
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <!-- CRT overlay -->
-  <div class="crt" aria-hidden="true"></div>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html">Fraser Simpson</a>
 
-  <div class="page">
-    <header class="site-header">
-      <div class="container">
-        <a class="brand" href="index.html">Fraser Simpson</a>
+      <nav class="nav" aria-label="Primary">
+        <a class="active" href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="teaching.html">Teaching</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-        <nav class="nav" aria-label="Primary">
-          <a class="active" href="index.html">Home</a>
-          <a href="about.html">About</a>
-          <a href="teaching.html">Teaching</a>
-          <a href="contact.html">Contact</a>
-        </nav>
+  <main class="container">
+    <section class="hero">
+      <h1>Fraser Simpson</h1>
+      <p class="lead">
+        Lecturer and educator focusing on games business, ethics, and higher education teaching.
+      </p>
+
+      <div class="cta">
+        <a class="button" href="about.html">About</a>
+        <a class="button secondary" href="teaching.html">Teaching</a>
+        <a class="button secondary" href="contact.html">Contact</a>
       </div>
-    </header>
+    </section>
 
-    <main class="container" style="padding: 22px 0 44px;">
-      <!-- HERO PANE -->
-      <section class="pane">
-        <span class="pane-title">SYSTEM: /home/fraser — STATUS: [OK]</span>
-        <div class="pane-body">
-          <h1>
-            <span class="typing">fraser simpson</span><span class="cursor" aria-hidden="true"></span>
-          </h1>
-
-          <p class="lead">
-            Lecturer and educator specialising in <span class="kbd">games business</span>, <span class="kbd">ethics</span>, and
-            <span class="kbd">higher education</span>.
-          </p>
-
-          <div class="badges" aria-label="Focus areas">
-            <span class="badge">HIGHER EDUCATION</span>
-            <span class="badge">GAMES BUSINESS</span>
-            <span class="badge">ETHICS</span>
-            <span class="badge warn">AMBER: ACCENTS</span>
-          </div>
-
-          <div class="cta">
-            <a class="button" href="about.html">Read Bio</a>
-            <a class="button" href="teaching.html">View Teaching</a>
-            <a class="button secondary" href="contact.html">Contact</a>
-          </div>
-
-          <hr class="hr" />
-
-          <p class="cmd">
-            tip: add your links in <code>index.html</code> under “profiles” — LinkedIn / Scholar / ORCID / GitHub.
-          </p>
-        </div>
-      </section>
-
-      <div style="height: 12px;"></div>
-
-      <!-- TMUX-LIKE GRID -->
-      <section class="grid" aria-label="Home panes">
-        <div class="pane col-6">
-          <span class="pane-title">PANE: FOCUS — /etc/profile.d</span>
-          <div class="pane-body">
-            <ul>
-              <li>Teaching in higher education</li>
-              <li>Ethics in the video games business</li>
-              <li>Industry practice and professional preparation</li>
-              <li>Assessment design and meaningful feedback</li>
-            </ul>
-          </div>
+    <section class="section">
+      <div class="grid">
+        <div class="card">
+          <h2>Focus</h2>
+          <ul>
+            <li>Teaching in higher education</li>
+            <li>Ethics in the video games business</li>
+            <li>Assessment design and feedback</li>
+            <li>Industry practice and professional skills</li>
+          </ul>
         </div>
 
-        <div class="pane col-6">
-          <span class="pane-title">PANE: PROFILES — ./links</span>
-          <div class="pane-body">
-            <p style="margin: 0 0 10px; color: var(--muted);">
-              Replace the placeholders with your real URLs.
-            </p>
-            <p style="margin: 0;">
-              <a class="cmd" href="#" aria-label="LinkedIn profile">LinkedIn</a><br />
-              <a class="cmd" href="#" aria-label="Google Scholar profile">Google Scholar</a><br />
-              <a class="cmd" href="#" aria-label="ORCID profile">ORCID</a><br />
-              <a class="cmd" href="#" aria-label="GitHub profile">GitHub</a>
-            </p>
-          </div>
+        <div class="card">
+          <h2>Links</h2>
+          <p>Add your main profiles:</p>
+          <ul>
+            <li><a href="#">LinkedIn</a></li>
+            <li><a href="#">Google Scholar</a></li>
+            <li><a href="#">ORCID</a></li>
+            <li><a href="#">GitHub</a></li>
+          </ul>
         </div>
+      </div>
+    </section>
 
-        <div class="pane col-8">
-          <span class="pane-title">PANE: NOTES — ~/readme</span>
-          <div class="pane-body">
-            <p style="margin: 0; color: var(--muted);">
-              This site is intentionally minimal and fast. It’s a static GitHub Pages build with a terminal design system:
-              monospace typography, ASCII pane metaphors, and high-contrast tokens.
-            </p>
-          </div>
-        </div>
-
-        <div class="pane col-4">
-          <span class="pane-title">PANE: COMMANDS — --help</span>
-          <div class="pane-body">
-            <p style="margin: 0 0 10px; color: var(--muted);">Quick actions:</p>
-            <p style="margin: 0;">
-              <a class="cmd" href="about.html">cat about.txt</a><br />
-              <a class="cmd" href="teaching.html">ls teaching/</a><br />
-              <a class="cmd" href="contact.html">ping fraser</a>
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <footer class="footer">
-        <div>© <span id="year"></span> Fraser Simpson</div>
-        <div>frasersimpson.net</div>
-      </footer>
-    </main>
-  </div>
+    <footer class="footer">
+      <div>© <span id="year"></span> Fraser Simpson</div>
+      <div>frasersimpson.net</div>
+    </footer>
+  </main>
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
