@@ -1,38 +1,72 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Contact — Fraser Simpson</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:wght@500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — Fraser Simpson</title>
+  <meta name="description" content="Contact — Fraser Simpson." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:wght@500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-<header class="site-header">
-<div class="container">
-<a class="brand" href="index.html">Fraser Simpson</a>
-<nav class="nav">
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="teaching.html">Teaching</a>
-<a href="publications.html">Publications</a>
-<a href="resources.html">Resources</a>
-<a href="gameography.html">Gameography</a>
-<a class="active" href="contact.html">Contact</a>
-</nav>
-</div>
-</header>
-<main class="container">
-<h1>Contact</h1><p><a href='mailto:you@example.com'>you@example.com</a></p>
-<footer class="footer">
-<div>© <span id="year"></span> Fraser Simpson</div>
-<div>frasersimpson.net</div>
-</footer>
-</main>
-<script>
-document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html">Fraser Simpson</a>
+
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="teaching.html">Teaching</a>
+        <a href="publications.html">Publications</a>
+        <a href="resources.html">Resources</a>
+        <a href="gameography.html">Gameography</a>
+        <a class="active" href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <h1>Contact</h1>
+    <p class="lead">
+      Keep this page simple. One email address is often enough.
+    </p>
+
+    <hr class="rule" />
+
+    <h2>Email</h2>
+    <p>
+      <a href="mailto:you@example.com">you@example.com</a> <span class="small">(replace with yours)</span>
+    </p>
+
+    <h2>Profiles</h2>
+    <ul class="linklist">
+      <li><a href="#">LinkedIn profile</a></li>
+      <li><a href="#">Google Scholar profile</a></li>
+      <li><a href="#">ORCID</a></li>
+      <li><a href="#">GitHub</a></li>
+    </ul>
+
+    <div class="callout">
+      <strong>Accessibility tip</strong>
+      <p class="small" style="margin-top: 8px;">
+        Use descriptive link text (e.g., “Google Scholar profile”) rather than “click here”.
+      </p>
+    </div>
+
+
+    <footer class="footer">
+      <div>© <span id="year"></span> Fraser Simpson</div>
+      <div>frasersimpson.net</div>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
