@@ -1,316 +1,184 @@
-/* ==========================================================================
-   TERMINAL CLI DESIGN SYSTEM — frasersimpson.net
-   Stack: static HTML + CSS (GitHub Pages)
-   Philosophy: high-contrast, monospace supremacy, zero radius, ASCII panes
-   ========================================================================== */
-
 :root{
-  /* Colors (dark-mode only) */
-  --bg: #0a0a0a;
-  --primary: #33ff00;   /* terminal green */
-  --secondary: #ffb000; /* amber */
-  --muted: #1f521f;     /* dim green */
-  --error: #ff3333;
-
-  --text: var(--primary);
-  --border: var(--muted);
+  /* Color tokens */
+  --bg: #ffffff;
+  --text: #0b1f3a;     /* navy */
+  --muted: #334155;    /* slate */
+  --border: #e6eaf0;   /* light border */
+  --link: #0b1f3a;     /* navy links */
+  --linkHover: #0a2e6a;
 
   /* Typography */
-  --font: "JetBrains Mono", "Fira Code", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace;
 
-  /* Layout rhythm */
-  --max: 980px;
+  /* Layout */
+  --max: 900px;
+  --radius: 10px;
   --pad: 14px;
-
-  /* Effects */
-  --glow: 0 0 5px rgba(51, 255, 0, 0.5);
 }
 
-/* Reset-ish */
 *{ box-sizing: border-box; }
-html, body{ height: 100%; }
+html, body{ margin:0; padding:0; }
 body{
-  margin: 0;
+  font-family: var(--font);
   background: var(--bg);
   color: var(--text);
-  font-family: var(--font);
   line-height: 1.55;
-  text-shadow: var(--glow);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
-
-a{ color: inherit; text-decoration: none; }
-a:hover{ text-decoration: underline; }
 
 .container{
   width: min(var(--max), calc(100% - 32px));
   margin: 0 auto;
 }
 
-/* ==========================================================================
-   CRT overlay (subtle scanlines + vignette)
-   ========================================================================== */
-.crt{
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-}
-.crt::before{
-  content:"";
-  position: absolute;
-  inset: 0;
-  background:
-    repeating-linear-gradient(
-      to bottom,
-      rgba(255,255,255,0.03) 0px,
-      rgba(255,255,255,0.03) 1px,
-      rgba(0,0,0,0) 2px,
-      rgba(0,0,0,0) 4px
-    );
-  opacity: 0.18;
-}
-.crt::after{
-  content:"";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 50% 20%, rgba(51,255,0,0.06), rgba(0,0,0,0.6) 60%, rgba(0,0,0,0.9));
-  opacity: 0.45;
-}
-
-/* Keep content above overlay */
-.page{
-  position: relative;
-  z-index: 1;
-}
-
-/* ==========================================================================
-   Header / Nav (shell-like)
-   ========================================================================== */
+/* Header */
 .site-header{
   border-bottom: 1px solid var(--border);
-  padding: 10px 0;
+  background: var(--bg);
 }
 
 .site-header .container{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
   gap: 14px;
+  padding: 14px 0;
   flex-wrap: wrap;
 }
 
 .brand{
-  font-weight: 700;
-  letter-spacing: 0.4px;
-  white-space: nowrap;
-}
-.brand::before{
-  content: "frsrgames@frasersimpson:~$ ";
-  color: var(--muted);
+  font-weight: 650;
+  letter-spacing: -0.2px;
+  color: var(--text);
+  text-decoration: none;
 }
 
 .nav{
-  display: flex;
+  display:flex;
   gap: 10px;
   flex-wrap: wrap;
-  align-items: center;
+  align-items:center;
 }
 
 .nav a{
-  padding: 4px 8px;
-  border: 1px dashed transparent;
   color: var(--muted);
-  text-shadow: none; /* keep nav crisp */
+  text-decoration: none;
+  padding: 6px 8px;
+  border-radius: 8px;
 }
+
 .nav a:hover{
-  border-color: var(--border);
+  background: #f6f8fb;
   color: var(--text);
-  text-shadow: var(--glow);
 }
+
 .nav a.active{
-  border-color: var(--primary);
-  color: var(--bg);
-  background: var(--primary);
-  text-shadow: none;
+  background: #eef3fb;
+  color: var(--text);
 }
 
-/* ==========================================================================
-   Terminal primitives
-   ========================================================================== */
-.hr{
-  border: none;
-  border-top: 1px dashed var(--border);
-  margin: 18px 0;
-}
-
-.kbd{
-  display: inline-block;
-  padding: 2px 6px;
-  border: 1px solid var(--border);
-  background: rgba(51,255,0,0.03);
-}
-
-/* ASCII title bar / pane */
-.pane{
-  border: 1px solid var(--border);
-  padding: 0;
-  margin: 0;
-}
-.pane-title{
-  display: block;
-  padding: 8px 10px;
-  border-bottom: 1px solid var(--border);
-  background: rgba(51,255,0,0.03);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: 0.92rem;
-}
-.pane-body{
-  padding: var(--pad);
-}
-
-/* Grid layout (tmux-ish panes) */
-.grid{
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 12px;
-}
-.col-12{ grid-column: span 12; }
-.col-8{ grid-column: span 8; }
-.col-6{ grid-column: span 6; }
-.col-4{ grid-column: span 4; }
-
-@media (max-width: 860px){
-  .col-8, .col-6, .col-4{ grid-column: span 12; }
-}
-
-/* Headings: ALL CAPS vibe */
-h1, h2{
-  margin: 0 0 10px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
+/* Typography */
 h1{
-  font-size: clamp(26px, 4vw, 44px);
+  margin: 0 0 8px;
+  font-size: clamp(28px, 3vw, 40px);
+  letter-spacing: -0.6px;
+  line-height: 1.15;
 }
 h2{
+  margin: 0 0 10px;
   font-size: 1.05rem;
-  color: var(--text);
+  letter-spacing: -0.2px;
 }
 
-/* Body / lead */
+p{ margin: 0 0 12px; }
 .lead{
-  color: var(--text);
-  opacity: 0.92;
-  margin: 0 0 14px;
-  max-width: 80ch;
+  color: var(--muted);
+  font-size: 1.05rem;
+  max-width: 70ch;
 }
 
-/* Badges (flags/status tags) */
-.badges{
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  margin: 12px 0 14px;
-}
-.badge{
-  border: 1px solid var(--border);
-  padding: 4px 8px;
-  text-transform: uppercase;
-  letter-spacing: 0.8px;
-  font-size: 0.85rem;
-  background: rgba(51,255,0,0.02);
-}
-.badge.warn{
-  border-color: color-mix(in srgb, var(--secondary) 70%, var(--border));
-  color: var(--secondary);
-  text-shadow: 0 0 5px rgba(255, 176, 0, 0.35);
+a{ color: var(--link); }
+a:hover{ color: var(--linkHover); }
+
+/* Main layout */
+main{
+  padding: 22px 0 44px;
 }
 
-/* Buttons (bracket style) */
-.button{
-  display: inline-block;
-  border: 1px solid var(--border);
-  padding: 8px 10px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  background: transparent;
-  text-shadow: none;
+.hero{
+  padding: 22px 0 8px;
 }
-.button::before{ content: "[ "; }
-.button::after{ content: " ]"; }
-.button:hover{
-  background: var(--primary);
-  color: var(--bg);
-  border-color: var(--primary);
-  text-decoration: none;
-}
-.button.secondary:hover{
-  background: var(--secondary);
-  color: var(--bg);
-  border-color: var(--secondary);
-}
+
 .cta{
-  display: flex;
+  display:flex;
   gap: 10px;
   flex-wrap: wrap;
   margin-top: 10px;
 }
 
-/* Links as “commands” */
-.cmd{
+.button{
+  display:inline-block;
+  text-decoration:none;
+  border: 1px solid var(--border);
+  padding: 9px 12px;
+  border-radius: var(--radius);
   color: var(--text);
+  background: #f6f8fb;
 }
-.cmd::before{
-  content: "> ";
+
+.button:hover{
+  background: #eef3fb;
+  text-decoration:none;
+}
+
+.button.secondary{
+  background: transparent;
+}
+
+/* Cards / sections */
+.section{ margin-top: 18px; }
+
+.grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.card{
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--pad);
+  background: #ffffff;
+}
+
+.card p{ color: var(--muted); }
+
+ul{
+  margin: 10px 0 0;
+  padding-left: 18px;
   color: var(--muted);
 }
+li{ margin: 6px 0; }
 
 /* Footer */
 .footer{
-  margin-top: 18px;
-  padding: 14px 0 22px;
-  border-top: 1px dashed var(--border);
+  margin-top: 26px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
   color: var(--muted);
-  display: flex;
-  justify-content: space-between;
+  display:flex;
+  justify-content:space-between;
   gap: 10px;
   flex-wrap: wrap;
+  font-size: 0.95rem;
 }
 
-/* ==========================================================================
-   Cursor + typing effect
-   ========================================================================== */
-.cursor{
-  display: inline-block;
-  width: 10px;
-  height: 1em;
-  margin-left: 6px;
-  background: var(--primary);
-  vertical-align: -2px;
-  animation: blink 1s steps(1) infinite;
-  box-shadow: var(--glow);
-}
-@keyframes blink{
-  0%, 49% { opacity: 1; }
-  50%, 100% { opacity: 0; }
-}
-
-/* Typewriter (one-shot) */
-.typing{
-  display: inline-block;
-  overflow: hidden;
-  border-right: 10px solid transparent; /* cursor handled separately */
-  white-space: nowrap;
-  max-width: 0;
-  animation: typing 1.6s steps(28, end) forwards;
-}
-@keyframes typing{
-  to { max-width: 40ch; }
-}
-
-/* Reduce motion */
-@media (prefers-reduced-motion: reduce){
-  .cursor{ animation: none; opacity: 1; }
-  .typing{ animation: none; max-width: none; }
+/* Small screens */
+@media (max-width: 520px){
+  .site-header .container{ padding: 12px 0; }
+  .nav a{ padding: 6px 7px; }
+  .button{ width: 100%; text-align: center; }
 }
