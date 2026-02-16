@@ -1,38 +1,77 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Publications — Fraser Simpson</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:wght@500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Publications — Fraser Simpson</title>
+  <meta name="description" content="Publications — Fraser Simpson." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:wght@500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-<header class="site-header">
-<div class="container">
-<a class="brand" href="index.html">Fraser Simpson</a>
-<nav class="nav">
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="teaching.html">Teaching</a>
-<a class="active" href="publications.html">Publications</a>
-<a href="resources.html">Resources</a>
-<a href="gameography.html">Gameography</a>
-<a href="contact.html">Contact</a>
-</nav>
-</div>
-</header>
-<main class="container">
-<h1>Publications</h1><p>Publications here.</p>
-<footer class="footer">
-<div>© <span id="year"></span> Fraser Simpson</div>
-<div>frasersimpson.net</div>
-</footer>
-</main>
-<script>
-document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html">Fraser Simpson</a>
+
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="teaching.html">Teaching</a>
+        <a class="active" href="publications.html">Publications</a>
+        <a href="resources.html">Resources</a>
+        <a href="gameography.html">Gameography</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <h1>Publications</h1>
+    <p class="lead">
+      Keep formatting consistent. A simple citation-style list is enough. Add DOIs, PDFs, or publisher links.
+    </p>
+
+    <div class="meta" aria-label="External profiles">
+      <span><a href="#">Google Scholar</a></span>
+      <span>·</span>
+      <span><a href="#">ORCID</a></span>
+      <span>·</span>
+      <span><a href="#">Full CV (PDF)</a></span>
+    </div>
+
+    <hr class="rule" />
+
+    <h2>Journal articles</h2>
+    <ul>
+      <li><strong>Simpson, F.</strong> (2025). Example article title about games business ethics. <em>Journal Name</em>. <a href="#">DOI</a></li>
+      <li><strong>Simpson, F.</strong> (2024). Example article title about teaching practice. <em>Journal Name</em>. <a href="#">Publisher page</a></li>
+    </ul>
+
+    <h2>Conference papers and talks</h2>
+    <ul>
+      <li><strong>Simpson, F.</strong> (2025). Example talk title. Conference Name. <a href="#">Slides</a> · <a href="#">Video</a></li>
+      <li><strong>Simpson, F.</strong> (2023). Example paper title. Conference Name. <a href="#">Abstract</a></li>
+    </ul>
+
+    <h2>Other writing</h2>
+    <ul>
+      <li>Example report or article title. Outlet/Organisation (2024). <a href="#">Link</a></li>
+    </ul>
+
+
+    <footer class="footer">
+      <div>© <span id="year"></span> Fraser Simpson</div>
+      <div>frasersimpson.net</div>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
