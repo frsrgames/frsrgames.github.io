@@ -3,163 +3,133 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-
   <title>Fraser Simpson</title>
-  <meta name="description" content="Fraser Simpson — Lecturer, educator, and specialist in games business and ethics." />
+  <meta name="description" content="Fraser Simpson — Lecturer and educator (games business, ethics, higher education)." />
+
+  <!-- Optional: load JetBrains Mono (safe to omit; system monospace will be used) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css" />
-
 </head>
+
 <body>
+  <!-- CRT overlay -->
+  <div class="crt" aria-hidden="true"></div>
 
-  <!-- Header -->
-  <header class="site-header">
-    <div class="container">
+  <div class="page">
+    <header class="site-header">
+      <div class="container">
+        <a class="brand" href="index.html">Fraser Simpson</a>
 
-      <a class="brand" href="index.html">
-        Fraser Simpson
-      </a>
-
-      <nav class="nav">
-        <a class="active" href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="teaching.html">Teaching</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-
-    </div>
-  </header>
-
-
-  <!-- Main content -->
-  <main class="container">
-
-    <!-- Hero -->
-    <section class="hero">
-
-      <h1>Fraser Simpson</h1>
-
-      <p class="lead">
-        Lecturer and educator specialising in the business and ethics of video games, higher education teaching, and professional preparation for the games industry.
-      </p>
-
-      <div class="badges">
-        <span class="badge">Higher education</span>
-        <span class="badge">Games business</span>
-        <span class="badge">Ethics</span>
-        <span class="badge">Curriculum & assessment</span>
+        <nav class="nav" aria-label="Primary">
+          <a class="active" href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="teaching.html">Teaching</a>
+          <a href="contact.html">Contact</a>
+        </nav>
       </div>
+    </header>
 
-      <div class="cta">
-        <a class="button primary" href="about.html">About</a>
-        <a class="button" href="teaching.html">Teaching</a>
-        <a class="button" href="contact.html">Contact</a>
-      </div>
+    <main class="container" style="padding: 22px 0 44px;">
+      <!-- HERO PANE -->
+      <section class="pane">
+        <span class="pane-title">SYSTEM: /home/fraser — STATUS: [OK]</span>
+        <div class="pane-body">
+          <h1>
+            <span class="typing">fraser simpson</span><span class="cursor" aria-hidden="true"></span>
+          </h1>
 
-    </section>
-
-
-    <!-- Main sections -->
-    <section class="section">
-
-      <div class="grid">
-
-        <!-- Focus card -->
-        <div class="card">
-
-          <h2>Focus</h2>
-
-          <ul>
-            <li>Teaching in higher education</li>
-            <li>Ethics in the video games business</li>
-            <li>Games industry practice and commercial realities</li>
-            <li>Assessment design and meaningful feedback</li>
-          </ul>
-
-        </div>
-
-
-        <!-- Links card -->
-        <div class="card">
-
-          <h2>Profiles and links</h2>
-
-          <p>
-            Professional profiles and additional information.
+          <p class="lead">
+            Lecturer and educator specialising in <span class="kbd">games business</span>, <span class="kbd">ethics</span>, and
+            <span class="kbd">higher education</span>.
           </p>
 
-          <div class="inline-links">
-            <a href="#">LinkedIn</a>
-            <a href="#">Google Scholar</a>
-            <a href="#">GitHub</a>
+          <div class="badges" aria-label="Focus areas">
+            <span class="badge">HIGHER EDUCATION</span>
+            <span class="badge">GAMES BUSINESS</span>
+            <span class="badge">ETHICS</span>
+            <span class="badge warn">AMBER: ACCENTS</span>
           </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- Optional extra section -->
-    <section class="section">
-
-      <div class="grid">
-
-        <div class="card">
-
-          <h2>Teaching and interests</h2>
-
-          <p>
-            My work focuses on preparing students for the realities of the games industry,
-            combining practical insight with critical understanding of ethics, responsibility,
-            and professional practice.
-          </p>
-
-        </div>
-
-
-        <div class="card">
-
-          <h2>Contact</h2>
-
-          <p>
-            The easiest way to reach me is via email. See the contact page for details.
-          </p>
 
           <div class="cta">
-            <a class="button" href="contact.html">Contact details</a>
+            <a class="button" href="about.html">Read Bio</a>
+            <a class="button" href="teaching.html">View Teaching</a>
+            <a class="button secondary" href="contact.html">Contact</a>
           </div>
 
+          <hr class="hr" />
+
+          <p class="cmd">
+            tip: add your links in <code>index.html</code> under “profiles” — LinkedIn / Scholar / ORCID / GitHub.
+          </p>
+        </div>
+      </section>
+
+      <div style="height: 12px;"></div>
+
+      <!-- TMUX-LIKE GRID -->
+      <section class="grid" aria-label="Home panes">
+        <div class="pane col-6">
+          <span class="pane-title">PANE: FOCUS — /etc/profile.d</span>
+          <div class="pane-body">
+            <ul>
+              <li>Teaching in higher education</li>
+              <li>Ethics in the video games business</li>
+              <li>Industry practice and professional preparation</li>
+              <li>Assessment design and meaningful feedback</li>
+            </ul>
+          </div>
         </div>
 
-      </div>
+        <div class="pane col-6">
+          <span class="pane-title">PANE: PROFILES — ./links</span>
+          <div class="pane-body">
+            <p style="margin: 0 0 10px; color: var(--muted);">
+              Replace the placeholders with your real URLs.
+            </p>
+            <p style="margin: 0;">
+              <a class="cmd" href="#" aria-label="LinkedIn profile">LinkedIn</a><br />
+              <a class="cmd" href="#" aria-label="Google Scholar profile">Google Scholar</a><br />
+              <a class="cmd" href="#" aria-label="ORCID profile">ORCID</a><br />
+              <a class="cmd" href="#" aria-label="GitHub profile">GitHub</a>
+            </p>
+          </div>
+        </div>
 
-    </section>
+        <div class="pane col-8">
+          <span class="pane-title">PANE: NOTES — ~/readme</span>
+          <div class="pane-body">
+            <p style="margin: 0; color: var(--muted);">
+              This site is intentionally minimal and fast. It’s a static GitHub Pages build with a terminal design system:
+              monospace typography, ASCII pane metaphors, and high-contrast tokens.
+            </p>
+          </div>
+        </div>
 
+        <div class="pane col-4">
+          <span class="pane-title">PANE: COMMANDS — --help</span>
+          <div class="pane-body">
+            <p style="margin: 0 0 10px; color: var(--muted);">Quick actions:</p>
+            <p style="margin: 0;">
+              <a class="cmd" href="about.html">cat about.txt</a><br />
+              <a class="cmd" href="teaching.html">ls teaching/</a><br />
+              <a class="cmd" href="contact.html">ping fraser</a>
+            </p>
+          </div>
+        </div>
+      </section>
 
-    <!-- Footer -->
-    <footer class="footer">
+      <footer class="footer">
+        <div>© <span id="year"></span> Fraser Simpson</div>
+        <div>frasersimpson.net</div>
+      </footer>
+    </main>
+  </div>
 
-      <div>
-        © <span id="year"></span> Fraser Simpson
-      </div>
-
-      <div>
-        frasersimpson.net
-      </div>
-
-    </footer>
-
-
-  </main>
-
-
-  <!-- Auto update year -->
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
-
-
 </body>
 </html>
