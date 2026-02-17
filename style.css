@@ -1,75 +1,88 @@
-body{
-font-family: Inter, Helvetica, Arial, sans-serif;
-color:#111;
-background:#f4f4f4;
-margin:0;
-}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Fraser Simpson</title>
 
-.page{
-width:900px;
-margin:40px auto;
-}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
 
-.topbar{
-display:flex;
-justify-content:space-between;
-font-size:13px;
-margin-bottom:8px;
-}
+  <link rel="stylesheet" href="style.css">
+</head>
 
-hr{
-border:none;
-border-top:1px solid #bbb;
-margin:8px 0;
-}
+<body>
+  <div class="page">
 
-.main-grid{
-display:grid;
-grid-template-columns: 1fr 2fr;
-gap:40px;
-}
+    <header class="topbar">
+      <div>frasersimpson.net</div>
+      <div>Fraser Simpson</div>
+      <div>Teaching · Games · Ethics</div>
+    </header>
 
-.title{
-font-size:80px;
-font-weight:800;
-margin:0;
-line-height:0.9;
-}
+    <hr class="rule">
 
-.label{
-font-weight:600;
-}
+    <div class="main-grid">
 
-.small{
-font-size:13px;
-color:#444;
-}
+      <!-- LEFT -->
+      <aside>
+        <h1 class="title">A4*</h1>
 
-.nav{
-display:flex;
-flex-direction:column;
-gap:6px;
-}
+        <hr class="rule">
 
-.nav a{
-text-decoration:none;
-color:#06c;
-font-size:14px;
-}
+        <p class="label">Lecturer / Educator</p>
+        <p class="small">
+          Games business<br>
+          Ethics in games<br>
+          Higher education
+        </p>
 
-.nav a:hover{
-text-decoration:underline;
-}
+        <hr class="rule">
 
-.content{
-font-size:14px;
-line-height:1.6;
-max-width:480px;
-}
+        <nav class="nav" aria-label="Primary">
+          <a href="about.html">About</a>
+          <a href="teaching.html">Teaching</a>
+          <a href="publications.html">Publications</a>
+          <a href="resources.html">Resources</a>
+          <a href="gameography.html">Gameography</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </aside>
 
-.footer{
-display:flex;
-justify-content:space-between;
-font-size:12px;
-margin-top:20px;
-}
+      <!-- RIGHT -->
+      <main>
+        <hr class="rule">
+
+        <div class="content">
+          <p>
+            I teach and develop learning experiences in higher education, focusing on the business, ethics, and practice of video games.
+          </p>
+
+          <!-- Inline image example -->
+          <figure class="figure">
+            <img src="assets/px-logo.jpg" alt="Game controller logo with heart and button cluster">
+            <figcaption>Example inline image + caption (replace with your own).</figcaption>
+          </figure>
+
+          <p>
+            My work centres on helping students understand how games are made, funded, and distributed — and the ethical implications of those systems.
+          </p>
+
+          <p>
+            This site provides access to teaching materials, publications, resources, and selected projects.
+          </p>
+        </div>
+      </main>
+
+    </div>
+
+    <footer class="footer">
+      <div>© Fraser Simpson</div>
+      <div>frasersimpson.net</div>
+    </footer>
+
+    <hr class="rule">
+  </div>
+</body>
+</html>
