@@ -1,30 +1,32 @@
 :root{
-  /* Color tokens (navy on white) */
+  /* Swiss-modernist tokens */
   --bg: #ffffff;
   --text: #0b1f3a;      /* navy */
   --muted: #4a5b73;     /* subdued slate */
-  --border: #e7edf5;    /* very light line */
-  --soft: #f6f8fb;      /* faint surface */
+  --border: rgba(11,31,58,0.10);
+  --soft: rgba(11,31,58,0.04);
+
   --link: #0b1f3a;
   --linkHover: #0a2e6a;
 
-  /* Typography */
-  --font-body: "Inter", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-  --font-heading: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+  /* Typeface: Helvetica-like */
+  --font: "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
-  /* Layout */
-  --max: 760px;         /* narrower = more editorial */
+  /* Layout / rhythm */
+  --max: 760px;
   --space-1: 6px;
   --space-2: 12px;
   --space-3: 18px;
   --space-4: 28px;
   --space-5: 44px;
+
+  --radius: 12px;
 }
 
 *{ box-sizing: border-box; }
 html, body{ margin:0; padding:0; }
 body{
-  font-family: var(--font-body);
+  font-family: var(--font);
   background: var(--bg);
   color: var(--text);
   line-height: 1.65;
@@ -32,8 +34,38 @@ body{
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Graph paper background (blue dots, red major grid) */
+.bg{
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-color: #ffffff;
+  background-image:
+    radial-gradient(circle, rgba(40, 90, 180, 0.22) 1px, transparent 1.2px),
+    linear-gradient(to right, rgba(220, 60, 60, 0.20) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(220, 60, 60, 0.20) 1px, transparent 1px);
+  background-size: 16px 16px, 80px 80px, 80px 80px;
+  background-position: 0 0, 0 0, 0 0;
+}
+@media (prefers-reduced-motion: no-preference){
+  .bg{ animation: graphPaperDrift 60s linear infinite; }
+  @keyframes graphPaperDrift{
+    from { background-position: 0 0, 0 0, 0 0; }
+    to   { background-position: 16px 16px, 80px 80px, 80px 80px; }
+  }
+}
+@media (prefers-reduced-motion: reduce){
+  .bg{ animation: none; }
+}
+
 /* Links */
-a{ color: var(--link); text-decoration: underline; text-underline-offset: 3px; word-break: break-word; }
+a{
+  color: var(--link);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  word-break: break-word;
+}
 a:hover{ color: var(--linkHover); }
 
 /* Container */
@@ -42,16 +74,15 @@ a:hover{ color: var(--linkHover); }
   margin: 0 auto;
 }
 
-/* Header */
+/* Header: clean, typographic */
 .site-header{
   position: sticky;
   top: 0;
   background: rgba(255,255,255,0.92);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid rgba(11,31,58,0.10);
   z-index: 10;
 }
-
 .site-header .container{
   display:flex;
   align-items: baseline;
@@ -60,56 +91,81 @@ a:hover{ color: var(--linkHover); }
   padding: var(--space-3) 0;
   flex-wrap: wrap;
 }
-
 .brand{
-  font-family: var(--font-heading);
-  font-weight: 600;
-  letter-spacing: -0.2px;
+  font-family: var(--font);
+  font-weight: 800;
+  letter-spacing: -0.03em;
   color: var(--text);
   text-decoration: none;
+  font-size: 1.05rem;
+  text-transform: uppercase;
 }
 
-/* Nav: quiet + compact */
+/* Nav: minimal, grid-like */
 .nav{
   display:flex;
   gap: 10px;
   flex-wrap: wrap;
   align-items: center;
 }
-
 .nav a{
   font-size: 0.95rem;
+  font-weight: 600;
   color: var(--muted);
   padding: 4px 6px;
   border-radius: 8px;
   text-decoration: none;
 }
-
 .nav a:hover{
   color: var(--text);
-  background: var(--soft);
+  background: rgba(11,31,58,0.04);
 }
-
 .nav a.active{
   color: var(--text);
-  background: #eef3fb;
+  background: rgba(11,31,58,0.06);
 }
 
-/* Main */
-main{
-  padding: var(--space-5) 0 var(--space-5);
+/* Main: “paper” panel for readability */
+main.container{
+  padding: var(--space-5) 18px;
+  margin-top: var(--space-4);
+  margin-bottom: var(--space-5);
+  background: rgba(255,255,255,0.92);
+  border: 1px solid rgba(11,31,58,0.08);
+  box-shadow: 0 18px 60px rgba(11,31,58,0.05);
+  border-radius: var(--radius);
+}
+@media (max-width: 740px){
+  main.container{
+    padding: var(--space-4) 14px;
+    border-radius: 12px;
+  }
 }
 
-/* Typography */
+/* Typography: strong, graphic, sans */
 h1, h2, h3{
-  font-family: var(--font-heading);
+  font-family: var(--font);
   margin: 0 0 var(--space-2);
-  letter-spacing: -0.4px;
-  line-height: 1.2;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
 }
-h1{ font-size: clamp(30px, 3.4vw, 46px); }
-h2{ font-size: 1.15rem; margin-top: var(--space-4); }
-h3{ font-size: 1.02rem; margin-top: var(--space-3); }
+h1{
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 800;
+  text-transform: uppercase;
+}
+h2{
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-top: var(--space-4);
+  text-transform: uppercase;
+}
+h3{
+  font-size: 1rem;
+  font-weight: 700;
+  margin-top: var(--space-3);
+  text-transform: uppercase;
+}
 
 p{ margin: 0 0 var(--space-2); }
 .lead{
@@ -118,25 +174,26 @@ p{ margin: 0 0 var(--space-2); }
   max-width: 68ch;
 }
 
-/* Simple section separator */
+/* Rule */
 .rule{
   border: none;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid rgba(11,31,58,0.12);
   margin: var(--space-4) 0;
 }
 
-/* Meta row under hero */
+/* Meta row */
 .meta{
   display: flex;
-  gap: 14px;
+  gap: 12px;
   flex-wrap: wrap;
   color: var(--muted);
   font-size: 0.98rem;
+  font-weight: 600;
 }
-.meta a{ color: var(--muted); }
-.meta a:hover{ color: var(--text); }
+.meta a{ color: var(--muted); text-decoration: none; }
+.meta a:hover{ color: var(--text); text-decoration: underline; text-underline-offset: 3px; }
 
-/* Two-column block list (stacks on mobile) */
+/* Grid layout */
 .grid{
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -155,7 +212,7 @@ ul, ol{
 }
 li{ margin: 8px 0; }
 
-/* “Links list” presentation */
+/* Link list */
 .linklist{
   list-style: none;
   padding: 0;
@@ -163,22 +220,29 @@ li{ margin: 8px 0; }
 }
 .linklist li{ margin: 8px 0; }
 
-/* Simple callout box */
+/* Callout (like a design note) */
 .callout{
-  border: 1px solid var(--border);
-  background: var(--soft);
+  border: 1px solid rgba(11,31,58,0.12);
+  background: rgba(11,31,58,0.03);
   padding: var(--space-3);
   margin: var(--space-3) 0;
+}
+.callout strong{
+  display: inline-block;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
 }
 .small{
   font-size: 0.95rem;
   color: var(--muted);
 }
 
+/* Inline code */
 code{
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace;
   font-size: 0.95em;
-  background: #f3f6fb;
+  background: rgba(11,31,58,0.05);
   padding: 0 4px;
   border-radius: 4px;
 }
@@ -187,97 +251,12 @@ code{
 .footer{
   margin-top: var(--space-5);
   padding-top: var(--space-3);
-  border-top: 1px solid var(--border);
+  border-top: 1px solid rgba(11,31,58,0.10);
   color: var(--muted);
   font-size: 0.95rem;
   display: flex;
   justify-content: space-between;
   gap: var(--space-2);
   flex-wrap: wrap;
-}
-/* ===== Designer graph paper background (blue dots, red grid) ===== */
-
-.bg{
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-
-  /* Paper tone (very slightly warm white) */
-  background-color: #ffffff;
-
-  /* Layers:
-     1. Blue dots
-     2. Red major vertical lines
-     3. Red major horizontal lines
-  */
-  background-image:
-
-    /* Blue dots */
-    radial-gradient(
-      circle,
-      rgba(40, 90, 180, 0.22) 1px,
-      transparent 1.2px
-    ),
-
-    /* Red vertical lines */
-    linear-gradient(
-      to right,
-      rgba(220, 60, 60, 0.20) 1px,
-      transparent 1px
-    ),
-
-    /* Red horizontal lines */
-    linear-gradient(
-      to bottom,
-      rgba(220, 60, 60, 0.20) 1px,
-      transparent 1px
-    );
-
-  /* Spacing */
-  background-size:
-    16px 16px,   /* dots spacing */
-    80px 80px,   /* major vertical grid */
-    80px 80px;   /* major horizontal grid */
-
-  background-position:
-    0 0,
-    0 0,
-    0 0;
-}
-
-/* Optional: extremely subtle drift (feels alive but realistic) */
-@media (prefers-reduced-motion: no-preference){
-  .bg{
-    animation: graphPaperDrift 60s linear infinite;
-  }
-
-  @keyframes graphPaperDrift{
-    from { background-position: 0 0, 0 0, 0 0; }
-    to   { background-position: 16px 16px, 80px 80px, 80px 80px; }
-  }
-}
-
-/* Content "paper sheet" */
-main.container{
-  background: rgba(255,255,255,0.92);
-  border: 1px solid rgba(11,31,58,0.06);
-  box-shadow: 0 18px 60px rgba(11,31,58,0.05);
-  border-radius: 14px;
-  padding-left: 18px;
-  padding-right: 18px;
-}
-
-/* Mobile refinement */
-@media (max-width: 740px){
-  main.container{
-    border-radius: 12px;
-    padding-left: 14px;
-    padding-right: 14px;
-  }
-}
-
-/* Accessibility */
-@media (prefers-reduced-motion: reduce){
-  .bg{ animation: none; }
+  font-weight: 600;
 }
