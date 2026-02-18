@@ -53,13 +53,13 @@ body{
 
 /* Left column */
 .title{
-  font-size: clamp(64px, 7vw, 110px);
+  font-size: clamp(64px, 6.6vw, 104px);
+  white-space: nowrap;
   font-weight: 800;
   letter-spacing: -0.04em;
   margin: 0;
   line-height: 0.88;
   max-width: 100%;
-  overflow-wrap: anywhere;
 }
 
 .label{
