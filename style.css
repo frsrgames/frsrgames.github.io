@@ -187,4 +187,15 @@ html{ font-synthesis: none; }
     font-size:56px;
     white-space: normal; /* allow natural wrapping on small screens */
   }
+
+  /* fixing the gap padding */
+  /* --- Force breathing room between columns (Chrome + Safari) --- */
+  .main-grid > aside{
+    padding-right: 30px;   /* creates guaranteed gap after the name */
+  }
+  
+  .main-grid > main{
+    padding-left: 10px;     /* optional: a touch more air on the right column */
+  }
+
 }
