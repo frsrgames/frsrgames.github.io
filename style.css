@@ -19,6 +19,9 @@ body{
   color: var(--ink);
 }
 
+/* Helps keep font rendering consistent across browsers */
+html{ font-synthesis: none; }
+
 /* Page sheet */
 .page{
   width: min(1200px, calc(100% - 48px));
@@ -43,23 +46,23 @@ body{
   color:var(--muted);
 }
 
-/* Grid layout */
+/* Grid layout — tuned to match Safari/Chrome spacing */
 .main-grid{
   display: grid;
   grid-template-columns: 380px minmax(0, 1fr);
-  gap: 56px;
+  gap: 60px;               /* breathing space between columns */
   align-items: start;
 }
 
 /* Left column */
 .title{
   font-size: clamp(64px, 6.6vw, 104px);
-  white-space: nowrap;
   font-weight: 800;
   letter-spacing: -0.04em;
   margin: 0;
   line-height: 0.88;
   max-width: 100%;
+  white-space: nowrap;     /* prevents Chrome wrapping differences */
 }
 
 .label{
@@ -169,9 +172,19 @@ body{
 
 /* Mobile */
 @media(max-width:800px){
+  .page{
+    width: min(980px, calc(100% - 28px));
+    margin: 18px auto 28px;
+    padding: 14px 14px 18px;
+  }
+
   .main-grid{
     grid-template-columns:1fr;
     gap:18px;
   }
-  .title{ font-size:56px; }
+
+  .title{
+    font-size:56px;
+    white-space: normal; /* allow natural wrapping on small screens */
+  }
 }
