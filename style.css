@@ -21,10 +21,10 @@ body{
 
 /* Page sheet */
 .page{
-  width: min(920px, calc(100% - 32px));
-  margin: 24px auto 40px;
+  width: min(1200px, calc(100% - 48px));
+  margin: 32px auto 48px;
   background: var(--paper);
-  padding: 14px 14px 20px;
+  padding: 18px 18px 24px;
 }
 
 /* Rules */
@@ -45,18 +45,21 @@ body{
 
 /* Grid layout */
 .main-grid{
-  display:grid;
-  grid-template-columns:260px 1fr;
-  gap:40px;
+  display: grid;
+  grid-template-columns: 380px minmax(0, 1fr);
+  gap: 56px;
+  align-items: start;
 }
 
 /* Left column */
 .title{
-  font-size:86px;
-  font-weight:800;
-  letter-spacing:-0.04em;
-  margin:0;
-  line-height:0.9;
+  font-size: clamp(64px, 7vw, 110px);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  margin: 0;
+  line-height: 0.88;
+  max-width: 100%;
+  overflow-wrap: anywhere;
 }
 
 .label{
@@ -95,9 +98,9 @@ body{
 
 /* Right column content */
 .content{
-  font-size:13.5px;
-  line-height:1.65;
-  max-width:520px;
+  font-size: 14px;
+  line-height: 1.7;
+  max-width: 680px;
 }
 
 .content p{ margin:0 0 12px; }
@@ -148,6 +151,7 @@ body{
   margin: 12px 0 16px;
   background: rgba(255,255,255,0.55);
 }
+
 .callout strong{
   font-weight: 800;
   text-transform: uppercase;
@@ -169,5 +173,5 @@ body{
     grid-template-columns:1fr;
     gap:18px;
   }
-  .title{ font-size:64px; }
+  .title{ font-size:56px; }
 }
