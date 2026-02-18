@@ -1,82 +1,95 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Resources — Fraser Simpson</title>
-  <meta name="description" content="Resources — Fraser Simpson." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Resources — Fraser Simpson</title>
 
-  <link rel="stylesheet" href="style.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <div class="bg" aria-hidden="true"></div>
+<div class="page">
 
-  <header class="site-header">
-    <div class="container">
-      <a class="brand" href="index.html">Fraser Simpson</a>
+<header class="topbar">
+  <div>frasersimpson.net</div>
+  <div>Fraser Simpson</div>
+  <div>Teaching · Games · Ethics</div>
+</header>
 
-      <nav class="nav" aria-label="Primary">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="teaching.html">Teaching</a>
-        <a href="publications.html">Publications</a>
-        <a class="active" href="resources.html">Resources</a>
-        <a href="gameography.html">Gameography</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </div>
-  </header>
+<hr class="rule">
 
-  <main class="container">
+<div class="main-grid">
+  <aside>
+    <h1 class="title">Fraser<br>Simpson*</h1>
 
-    <h1>Resources</h1>
-    <p class="lead">
-      Curated links and materials. Organise by topic and add one-line annotations.
-    </p>
+    <hr class="rule">
 
-    <hr class="rule" />
-
-    <h2>Games business</h2>
-    <ul class="linklist">
-      <li><a href="#">Resource name</a> — why it’s useful (one sentence).</li>
-      <li><a href="#">Resource name</a> — what it covers (one sentence).</li>
-    </ul>
-
-    <h2>Ethics in games</h2>
-    <ul class="linklist">
-      <li><a href="#">Resource name</a> — one-sentence annotation.</li>
-      <li><a href="#">Resource name</a> — one-sentence annotation.</li>
-    </ul>
-
-    <h2>Downloads (hosted in this repo)</h2>
+    <p class="label">Lecturer, Educator</p>
     <p class="small">
-      Upload PDFs into the repo root and link to them here, e.g. <code>Fraser_Simpson_CV.pdf</code>.
+      Games business<br>
+      Ethics in games<br>
+      Higher education
     </p>
-    <ul class="linklist">
-      <li><a href="#">Fraser_Simpson_CV.pdf</a> — CV (PDF)</li>
-      <li><a href="#">ReadingList.pdf</a> — reading list (PDF)</li>
-    </ul>
 
-    <div class="callout">
-      <strong>External link example</strong>
-      <p class="small" style="margin-top: 8px;">
-        <a href="https://example.com" target="_blank" rel="noreferrer">Opens in a new tab</a> (using <code>target</code> + <code>rel</code>).
-      </p>
+    <hr class="rule">
+
+    <nav class="nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="teaching.html">Teaching</a>
+<a href="publications.html">Publications</a>
+<a class="active" href="resources.html">Resources</a>
+<a href="gameography.html">Gameography</a>
+<a href="contact.html">Contact</a>
+    </nav>
+  </aside>
+
+  <main>
+    <hr class="rule">
+    <div class="content">
+
+<h1>Resources</h1>
+<p>
+Curated links and materials. Organise by topic and add one-line annotations.
+</p>
+
+<h2>Games business</h2>
+<ul>
+  <li><a href="#">Resource name</a> — why it’s useful (one sentence).</li>
+  <li><a href="#">Resource name</a> — what it covers (one sentence).</li>
+</ul>
+
+<h2>Ethics in games</h2>
+<ul>
+  <li><a href="#">Resource name</a> — one-sentence annotation.</li>
+  <li><a href="#">Resource name</a> — one-sentence annotation.</li>
+</ul>
+
+<h2>Downloads</h2>
+<p class="small">
+Upload PDFs into the repo root or an <code>assets/</code> folder and link to them here.
+</p>
+<ul>
+  <li><a href="#">Fraser_Simpson_CV.pdf</a> — CV (PDF)</li>
+  <li><a href="#">ReadingList.pdf</a> — reading list (PDF)</li>
+</ul>
+
     </div>
-
-
-    <footer class="footer">
-      <div>© <span id="year"></span> Fraser Simpson</div>
-      <div>frasersimpson.net</div>
-    </footer>
   </main>
+</div>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+<footer class="footer">
+  <div>© Fraser Simpson</div>
+  <div>frasersimpson.net</div>
+</footer>
+
+<hr class="rule">
+
+</div>
 </body>
 </html>

@@ -1,81 +1,92 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Gameography — Fraser Simpson</title>
-  <meta name="description" content="Gameography — Fraser Simpson." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gameography — Fraser Simpson</title>
 
-  <link rel="stylesheet" href="style.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <div class="bg" aria-hidden="true"></div>
+<div class="page">
 
-  <header class="site-header">
-    <div class="container">
-      <a class="brand" href="index.html">Fraser Simpson</a>
+<header class="topbar">
+  <div>frasersimpson.net</div>
+  <div>Fraser Simpson</div>
+  <div>Teaching · Games · Ethics</div>
+</header>
 
-      <nav class="nav" aria-label="Primary">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="teaching.html">Teaching</a>
-        <a href="publications.html">Publications</a>
-        <a href="resources.html">Resources</a>
-        <a class="active" href="gameography.html">Gameography</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </div>
-  </header>
+<hr class="rule">
 
-  <main class="container">
+<div class="main-grid">
+  <aside>
+    <h1 class="title">Fraser<br>Simpson*</h1>
 
-    <h1>Software</h1>
-    <p class="lead">
-      A list of game-related projects and contributions.
+    <hr class="rule">
+
+    <p class="label">Lecturer, Educator</p>
+    <p class="small">
+      Games business<br>
+      Ethics in games<br>
+      Higher education
     </p>
 
-    <hr class="rule" />
+    <hr class="rule">
 
-    <h2>Game Projects/ Roles</h2><br />
-    <h3>Freelance Work</h3>
-    <ul>
-      <li>
-        <strong>Peaky Blinders: Mastermind</strong> — Level/ Mission Design<br />
-        <span class="small">Futurlab / Curve Digital. Switch, PS4, Xbox One, Steam</span><br />
-        <span class="small">Freelance level designer on this puzzle game for Futurlab and Curve Digital.</span>
-      </li>
-      <li>
-        <strong>Sliders</strong> — Consultant Designer<br />
-        <span class="small">Slipstream Labs. Snapchat Games</span><br />
-        <span class="small">Steering high level concept, metagame and economy design.</span>
-      </li>
-      <h3>Yoyo Games</h3>
-      <li>
-        <strong>Various</strong> — Creative Lead<br />
-        <span class="small">Slipstream Labs. Snapchat Games</span><br />
-        <span class="small">Steering high level concept, metagame and economy design.</span>
-      </li>
-    </ul>
+    <nav class="nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="teaching.html">Teaching</a>
+<a href="publications.html">Publications</a>
+<a href="resources.html">Resources</a>
+<a class="active" href="gameography.html">Gameography</a>
+<a href="contact.html">Contact</a>
+    </nav>
+  </aside>
 
-    <h2>Tools / prototypes</h2>
-    <ul class="linklist">
-      <li><a href="#">FeedbackBuilder</a> — brief note on what it does.</li>
-      <li><a href="#">Prototype</a> — brief note.</li>
-    </ul>
+  <main>
+    <hr class="rule">
+    <div class="content">
 
+<h1>Gameography</h1>
+<p>
+List game-related projects and contributions. Keep each entry short: title, year, role, and a link.
+</p>
 
-    <footer class="footer">
-      <div>© <span id="year"></span> Fraser Simpson</div>
-      <div>frasersimpson.net</div>
-    </footer>
+<h2>Selected projects</h2>
+<ul>
+  <li>
+    <strong>Project Title</strong> (2025) — Role / contribution. <a href="#">Link</a><br>
+    <span class="small">One sentence on what you did or what the project achieved.</span>
+  </li>
+  <li>
+    <strong>Another Project</strong> (2023) — Role / contribution. <a href="#">Link</a><br>
+    <span class="small">A short note: platform, team size, or outcome.</span>
+  </li>
+</ul>
+
+<h2>Tools / prototypes</h2>
+<ul>
+  <li><a href="#">FeedbackBuilder</a> — brief note on what it does.</li>
+  <li><a href="#">Prototype</a> — brief note.</li>
+</ul>
+
+    </div>
   </main>
+</div>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+<footer class="footer">
+  <div>© Fraser Simpson</div>
+  <div>frasersimpson.net</div>
+</footer>
+
+<hr class="rule">
+
+</div>
 </body>
 </html>

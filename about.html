@@ -1,83 +1,94 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>About — Fraser Simpson</title>
-  <meta name="description" content="About Fraser Simpson." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>About — Fraser Simpson</title>
 
-  <link rel="stylesheet" href="style.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <div class="bg" aria-hidden="true"></div>
+<div class="page">
 
-  <header class="site-header">
-    <div class="container">
-      <a class="brand" href="index.html">Fraser Simpson</a>
+<header class="topbar">
+  <div>frasersimpson.net</div>
+  <div>Fraser Simpson</div>
+  <div>Teaching · Games · Ethics</div>
+</header>
 
-      <nav class="nav" aria-label="Primary">
-        <a href="index.html">Home</a>
-        <a class="active" href="about.html">About</a>
-        <a href="teaching.html">Teaching</a>
-        <a href="publications.html">Publications</a>
-        <a href="resources.html">Resources</a>
-        <a href="gameography.html">Gameography</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </div>
-  </header>
+<hr class="rule">
 
-  <main class="container">
+<div class="main-grid">
+  <aside>
+    <h1 class="title">Fraser<br>Simpson*</h1>
 
-    <h1>About</h1>
-    <p class="lead">
-      Use this page for a short biography and a few key interests. Keep it concrete: what you do, who you work with,
-      and what you’re open to.
+    <hr class="rule">
+
+    <p class="label">Lecturer, Educator</p>
+    <p class="small">
+      Games business<br>
+      Ethics in games<br>
+      Higher education
     </p>
 
-    <hr class="rule" />
+    <hr class="rule">
 
-    <h2>Short bio</h2>
-    <p>
-      <strong>Example:</strong> I’m a lecturer in games business and professional practice. My teaching focuses on helping
-      students understand how games are made, funded, and sold — and the ethical trade-offs that come with that reality.
-    </p>
+    <nav class="nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+<a class="active" href="about.html">About</a>
+<a href="teaching.html">Teaching</a>
+<a href="publications.html">Publications</a>
+<a href="resources.html">Resources</a>
+<a href="gameography.html">Gameography</a>
+<a href="contact.html">Contact</a>
+    </nav>
+  </aside>
 
-    <h2>Interests</h2>
-    <ul>
-      <li>Ethics, governance, and responsibility in games</li>
-      <li>Assessment and feedback design</li>
-      <li>Student engagement and practical learning</li>
-    </ul>
+  <main>
+    <hr class="rule">
+    <div class="content">
 
-    <div class="callout">
-      <strong>Template tip</strong>
-      <p class="small" style="margin-top: 8px;">
-        To add a new page, copy an existing HTML file, update <code>&lt;title&gt;</code>, <code>&lt;h1&gt;</code>,
-        and set the active navigation link.
-      </p>
+<h1>About</h1>
+<p>
+Use this page for a short biography and a few key interests. Keep it concrete: what you do, who you work with,
+and what you’re open to.
+</p>
+
+<h2>Short bio</h2>
+<p>
+<strong>Example:</strong> I’m a lecturer in games business and professional practice. My teaching focuses on helping
+students understand how games are made, funded, and sold — and the ethical trade-offs that come with that reality.
+</p>
+
+<h2>Interests</h2>
+<ul>
+  <li>Ethics, governance, and responsibility in games</li>
+  <li>Assessment and feedback design</li>
+  <li>Student engagement and practical learning</li>
+</ul>
+
+<h2>Links</h2>
+<ul>
+  <li><a href="#">University profile</a></li>
+  <li><a href="#">CV (PDF)</a> — upload a PDF and link it here</li>
+</ul>
+
     </div>
-
-    <h2>Selected links</h2>
-    <ul class="linklist">
-      <li><a href="#">University profile</a></li>
-      <li><a href="#">CV (PDF)</a> — upload a PDF to the repo and link it here</li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-
-
-    <footer class="footer">
-      <div>© <span id="year"></span> Fraser Simpson</div>
-      <div>frasersimpson.net</div>
-    </footer>
   </main>
+</div>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+<footer class="footer">
+  <div>© Fraser Simpson</div>
+  <div>frasersimpson.net</div>
+</footer>
+
+<hr class="rule">
+
+</div>
 </body>
 </html>
