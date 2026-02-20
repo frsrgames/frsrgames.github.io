@@ -114,44 +114,95 @@ body{
   margin-top:18px;
 }
 
-/* Logo strip */
+/* ================================ */
+/* Auto-scrolling logo carousel */
+/* ================================ */
 
 .site-strip{
   margin-top:18px;
 }
 
-.site-strip__row{
-  display:flex;
-  flex-wrap:wrap;
-  gap:16px;
-  align-items:center;
+/* Mask/viewport */
+.site-strip__viewport{
+  overflow:hidden;
+  border-top: 1px solid rgba(0,0,0,0.03);
+  padding-top: 12px;
 }
 
-.site-strip__row img{
+/* Track moves continuously */
+.site-strip__track{
+  display:flex;
+  width:max-content;
+  will-change: transform;
+}
+
+.site-strip__set{
+  display:flex;
+  gap:16px;
+  align-items:center;
+  padding-right:16px; /* keeps gap consistent at the seam */
+}
+
+/* Logos: same height, subtle border, 40% opacity */
+.site-strip__set img{
   height:96px;
   width:auto;
+  flex-shrink:0;
   object-fit:contain;
-  border:1px solid rgba(0,0,0,0.12);
-  background:#fff;
+
+  opacity:0.4;
+
+  border:1px solid rgba(0,0,0,0.06); /* very subtle */
+  background:rgba(255,255,255,0.85);
   padding:8px;
+
+  display:block;
+}
+
+/* Optional: slightly lift opacity on hover (desktop) */
+@media (hover:hover){
+  .site-strip__set img:hover{
+    opacity:0.65;
+    border-color: rgba(0,0,0,0.10);
+  }
+}
+
+/* The animation: move left by exactly one set's width (50% of track since it's duplicated) */
+@media (prefers-reduced-motion: no-preference){
+  .site-strip__track{
+    animation: logoMarquee 38s linear infinite;
+  }
+
+  @keyframes logoMarquee{
+    from{ transform: translateX(0); }
+    to{ transform: translateX(-50%); }
+  }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .site-strip__track{ animation:none; }
 }
 
 /* Mobile */
-
 @media(max-width:900px){
 
-.main-grid{
-  grid-template-columns:1fr;
-}
+  .main-grid{
+    grid-template-columns:1fr;
+  }
 
-.title{
-  white-space:normal;
-  font-size:56px;
-}
+  .title{
+    white-space:normal;
+    font-size:56px;
+  }
 
-.main-grid aside,
-.main-grid main{
-  padding:0;
-}
+  .main-grid aside,
+  .main-grid main{
+    padding:0;
+  }
 
+  .site-strip__set img{
+    height:78px;
+    padding:6px;
+  }
 }
