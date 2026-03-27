@@ -28,7 +28,6 @@ body{
   min-height:calc(100vh - 64px);
   background:var(--paper);
   padding:18px;
-
   display:flex;
   flex-direction:column;
 }
@@ -88,8 +87,8 @@ body{
 }
 
 .nav a{
-  font-family:Helvetica, "Helvetica Neue", Arial, sans-serif;
-  font-size:26px;
+  font-family:Helvetica,"Helvetica Neue",Arial,sans-serif;
+  font-size:39px;
   line-height:1.02;
   font-weight:700;
   letter-spacing:-0.04em;
@@ -115,6 +114,10 @@ body{
   margin-bottom:12px;
 }
 
+.page-bottom{
+  margin-top:auto;
+}
+
 .footer{
   display:flex;
   justify-content:space-between;
@@ -128,7 +131,7 @@ body{
 /* ================================ */
 
 .site-strip{
-  margin-top:auto;
+  margin-top:0;
   padding-top:18px;
 }
 
@@ -182,7 +185,9 @@ body{
 }
 
 @media (prefers-reduced-motion: reduce){
-  .site-strip__track{ animation:none; }
+  .site-strip__track{
+    animation:none;
+  }
 }
 
 @media(max-width:900px){
