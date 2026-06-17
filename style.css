@@ -107,6 +107,26 @@ body{
   max-width:680px;
 }
 
+.scrollable{
+  max-height:calc(100vh - 220px);
+  overflow-y:auto;
+  padding-right:8px;
+}
+
+.scrollable::-webkit-scrollbar{
+  width:8px;
+}
+
+.scrollable::-webkit-scrollbar-thumb{
+  background:rgba(75, 90, 115, 0.35);
+  border-radius:999px;
+}
+
+.scrollable{
+  scrollbar-width:thin;
+  scrollbar-color:rgba(75, 90, 115, 0.35) transparent;
+}
+
 .content h1{
   font-size:14px;
   font-weight:800;
