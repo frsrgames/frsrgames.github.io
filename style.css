@@ -5,6 +5,7 @@
   --muted:#4a5b73;
   --rule:#b8b8b8;
   --link:#0b57d0;
+  --site-strip-height:160px; /* approximate height for logo strip area */
 }
 
 *{box-sizing:border-box;}
@@ -13,6 +14,7 @@ html,body{
   margin:0;
   padding:0;
   height:100%;
+  overflow:hidden;
 }
 
 body{
@@ -25,11 +27,14 @@ body{
 .page{
   width:min(1200px,calc(100% - 48px));
   margin:32px auto;
-  min-height:calc(100vh - 64px);
+  height:100vh;
+  max-height:100vh;
   background:var(--paper);
   padding:18px;
+  padding-bottom:calc(var(--site-strip-height) + 24px);
   display:flex;
   flex-direction:column;
+  overflow:hidden;
 }
 
 .rule{
@@ -50,14 +55,22 @@ body{
   grid-template-columns:380px minmax(0,1fr);
   gap:60px;
   align-items:start;
+  /* fill available vertical space and contain internal scrolling */
+  flex:1 1 auto;
+  height:100%;
+  overflow:hidden;
 }
 
 .main-grid aside{
   padding-right:34px;
 }
-
 .main-grid main{
   padding-left:10px;
+  display:flex;
+  flex-direction:column;
+  height:100%;
+  overflow:hidden;
+
 }
 
 .title{
@@ -105,6 +118,14 @@ body{
   font-size:14px;
   line-height:1.7;
   max-width:680px;
+  /* make the page content scroll internally (red area) */
+  flex:1 1 auto;
+  min-height:0; /* allow flex child to shrink */
+  overflow-y:auto;
+  overflow-x:hidden;
+  padding-right:8px;
+  /* keep the last content above the footer row */
+  padding-bottom:48px;
 }
 
 .scrollable{
@@ -146,6 +167,21 @@ body{
   margin-top:18px;
 }
 
+/* keep footer and bottom rule above the fixed site-strip */
+.page-bottom{
+  position:relative;
+  width:100%;
+  z-index:2;
+  background:var(--paper);
+  padding:0;
+}
+.footer{
+  position:relative;
+  z-index:3;
+  background:var(--paper);
+  padding:12px 0;
+}
+
 /* ================================ */
 /* Auto-scrolling logo carousel */
 /* ================================ */
@@ -153,6 +189,12 @@ body{
 .site-strip{
   margin-top:0;
   padding-top:18px;
+  position:fixed;
+  left:50%;
+  transform:translateX(-50%);
+  bottom:18px;
+  width:min(1200px,calc(100% - 48px));
+  z-index:20;
 }
 
 .site-strip__viewport{
@@ -216,6 +258,7 @@ body{
     width:min(1200px,calc(100% - 24px));
     margin:16px auto;
     min-height:calc(100vh - 32px);
+    padding-bottom:calc(var(--site-strip-height) + 24px);
   }
 
   .main-grid{
@@ -239,5 +282,10 @@ body{
   .site-strip__set img{
     height:78px;
     padding:6px;
+  }
+
+  .site-strip{
+    width:calc(100% - 24px);
+    bottom:12px;
   }
 }
