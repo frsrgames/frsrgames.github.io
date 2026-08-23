@@ -13,8 +13,8 @@
 html,body{
   margin:0;
   padding:0;
-  height:100%;
-  overflow:hidden;
+  min-height:100%;
+  overflow-x:hidden;
 }
 
 body{
@@ -22,19 +22,21 @@ body{
   background:var(--bg);
   color:var(--ink);
   font-synthesis:none;
+  overflow-y:auto;
 }
 
 .page{
   width:min(1200px,calc(100% - 48px));
   margin:32px auto;
-  height:100vh;
-  max-height:100vh;
+  min-height:100vh;
+  height:auto;
+  max-height:none;
   background:var(--paper);
   padding:18px;
   padding-bottom:calc(var(--site-strip-height) + 24px);
   display:flex;
   flex-direction:column;
-  overflow:hidden;
+  overflow:visible;
 }
 
 .rule{
@@ -254,15 +256,37 @@ body{
 
 @media(max-width:900px){
 
+  html, body{
+    height:auto;
+    overflow-x:hidden;
+    overflow-y:auto;
+  }
+
   .page{
     width:min(1200px,calc(100% - 24px));
     margin:16px auto;
     min-height:calc(100vh - 32px);
     padding-bottom:calc(var(--site-strip-height) + 24px);
+    height:auto;
+    max-height:none;
+    overflow:visible;
   }
 
   .main-grid{
     grid-template-columns:1fr;
+    height:auto;
+    max-height:none;
+    overflow:visible;
+  }
+
+  .main-grid main{
+    height:auto;
+    overflow:visible;
+  }
+
+  .content{
+    max-height:none;
+    overflow:visible;
   }
 
   .title{
